@@ -14,7 +14,7 @@ public static ChromeDriver driver;
     public static void main(String[] args) {
     	//Paso 1: instancio el navegador:
         //tomo la la direccion local del driver
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\kiusys\\Desktop\\automation\\finaljenkins\\loyalty\\tools\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\tools\\chromedriver.exe");
         //lo llamo para utilizarlo y hago las configuraciones necesarias
         ChromeOptions opts =new ChromeOptions();
     	opts.addArguments("--start-maximized");
@@ -28,14 +28,14 @@ public static ChromeDriver driver;
         //aplico un wait implicito
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         ////////////////////////////////////////////////////////////////
-        //PRIMER ESCENARIO Hogar y Electrodomésticos - Climatización///
+        //PRIMER ESCENARIO Hogar y ElectrodomÃ©sticos - ClimatizaciÃ³n///
         ///////////////////////////////////////////////////////////////
-        WebElement categoria = driver.findElement(By.xpath("//*[@class='nav-menu-item']//*[text()='Categorías']"));
+        WebElement categoria = driver.findElement(By.xpath("//*[@class='nav-menu-item']//*[text()='CategorÃ­as']"));
         categoria.click();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        WebElement categoriaHYE = driver.findElement(By.xpath("//*[text()='Hogar y Electrodomésticos']"));
+        WebElement categoriaHYE = driver.findElement(By.xpath("//*[text()='Hogar y ElectrodomÃ©sticos']"));
         categoriaHYE.click();  
-        WebElement climatizacion = driver.findElement(By.xpath("//*[text()='Climatización']"));
+        WebElement climatizacion = driver.findElement(By.xpath("//*[text()='ClimatizaciÃ³n']"));
         climatizacion.click();
         //IGNORO EL ALERTA QUE APARECE
         Alert alerta = driver.switchTo().alert(); //cambio al modal del alerta
@@ -46,11 +46,11 @@ public static ChromeDriver driver;
         cantidadHYE.isDisplayed();
         System.out.println("El PRIMER test corrio bien");
         ////////////////////////////////////////////////////////////////
-        //SEGUNDO ESCENARIO Tecnología - Celulares y Smartphones///////
+        //SEGUNDO ESCENARIO TecnologÃ­a - Celulares y Smartphones///////
         ///////////////////////////////////////////////////////////////
         categoria.click();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        WebElement categoriaTecnologia = driver.findElement(By.xpath("//a[@href='#' and contains (.,'Tecnología')]"));
+        WebElement categoriaTecnologia = driver.findElement(By.xpath("//a[@href='#' and contains (.,'TecnologÃ­a')]"));
         categoriaTecnologia.click();  
         WebElement celusYSmarts = driver.findElement(By.xpath("//*[@class='nav-categs-detail__categ-list']//a[text()='Celulares y Smartphones']"));
         celusYSmarts.click();
@@ -83,13 +83,13 @@ public static ChromeDriver driver;
         cantidadIndustria.isDisplayed();
         System.out.println("El CUARTO test corrio bien");
         ////////////////////////////////////////////////////////////////
-        //QUINTO ESCENARIO Juguetes y Bebés - Cuarto del Bebé///////////
+        //QUINTO ESCENARIO Juguetes y BebÃ©s - Cuarto del BebÃ©///////////
         ////////////////////////////////////////////////////////////////
         categoria.click();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        WebElement categoriaBebes = driver.findElement(By.xpath("//a[@href='#' and contains (.,'Juguetes y Bebés')]"));
+        WebElement categoriaBebes = driver.findElement(By.xpath("//a[@href='#' and contains (.,'Juguetes y BebÃ©s')]"));
         categoriaBebes.click();  
-        WebElement cuartoBebe = driver.findElement(By.xpath("//*[@class='nav-categs-detail__title']//a[text()='Cuarto del Bebé']"));
+        WebElement cuartoBebe = driver.findElement(By.xpath("//*[@class='nav-categs-detail__title']//a[text()='Cuarto del BebÃ©']"));
         cuartoBebe.click();
         titulo.isDisplayed();
         WebElement cantidadBebe = driver.findElement(By.xpath("//*[text()=' 28.194 resultados']"));
