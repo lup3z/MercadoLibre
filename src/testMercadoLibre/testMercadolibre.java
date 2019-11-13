@@ -66,25 +66,22 @@ public static ChromeDriver driver;
         caba.click();
         List<WebElement> listaResultados = driver.findElements(By.xpath("//div[contains(@class, 'rowItem')]"));
 
-        // obtener la info de un producto al azar
+        //OBTENER UN PRODUCTO RANDOM
         int numElementos = listaResultados.size();
         int randomElementNumber = new Random().nextInt(numElementos);
         WebElement elegido = listaResultados.get(randomElementNumber);
         WebElement nombreProductoElegido = elegido.findElement(By.cssSelector("span.main-title"));
         String nombreProducto = nombreProductoElegido.getText();
-
+        //OBTENER EL PRECIO DEL PRODUCTO RANDOM
         WebElement precioProductoElegido = elegido.findElement(By.cssSelector("span.price__fraction"));
         String precioProducto = precioProductoElegido.getText();
-
-        //darle click al elemento al azar
+        //darle click al PRODUCTO RANDOM
         nombreProductoElegido.click();
-        //verificar la informacion
-
-        //sacar el nombre del producto
+        //COPIAR EL TEXTO DEL PRODUCTO SELECCIONADO
         WebElement productoseleccionado = driver.findElement(By.cssSelector("h1.item-title__primary"));
         productoseleccionado.getText();
         String actualName=productoseleccionado.getText();
-
+        //COPIAR EL TEXTO DEL PRECIO DEL PRODUCTO SELECCIONADO
         WebElement precioseleccionado = driver.findElement(By.xpath("//*[@id='productInfo']//*[@class='price-tag']//*[@class='price-tag-fraction']"));
         precioseleccionado.getText();
         String actualPrecio=precioseleccionado.getText();
