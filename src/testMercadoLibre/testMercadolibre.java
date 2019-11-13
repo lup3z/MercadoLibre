@@ -192,7 +192,7 @@ public static ChromeDriver driver;
                 String str = w.getText();
                 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
                 if (i < 5)
-                        if (w.getText().equalsIgnoreCase("Llega gratis mañana")||w.getText().equalsIgnoreCase("Llega mañana")){
+                        if (str.equalsIgnoreCase("Llega gratis mañana")||str.equalsIgnoreCase("Llega mañana")){
                             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
                             System.out.println("ok");
                             i++; }
